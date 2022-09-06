@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://unpkg.com/vue@v3.1.1"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
 
     <style>
 
@@ -23,6 +26,8 @@
 <div id="app">
     <button :class="active ? 'text-green' : 'text-red'" @click="toogle">Click me</button>
 </div>
+
+
 
 <script>
     Vue.createApp({

@@ -8,21 +8,55 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@v3.1.1"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .is-loading {
+            display: inline-block;
+            position: relative;
+            width: 101px;
+            height: 43px;
+        }
+        .is-loading:after {
+            content: " ";
+            display: block;
+            border-radius: 50%;
+            width: 0;
+            position: absolute;
+            right: -14px;
+            top: -17px;
+            margin: 8px;
+            box-sizing: border-box;
+            border: 9px solid #d71c1c;
+            border-color: #ed0b0b transparent #f70e0e transparent;
+            animation: lds-hourglass 1.2s infinite;
+        }
+        @keyframes lds-hourglass {
+            0% {
+                transform: rotate(0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+            50% {
+                transform: rotate(900deg);
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            100% {
+                transform: rotate(1800deg);
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 <div id="app" class="container mx-auto mt-20">
-    <app-button>Submit</app-button>
+    <app-button type="danger">Delete</app-button>
+    <app-button type="secondary">Info</app-button>
+    <app-button type="primary" :processing="true">Valuable</app-button>
 </div>
 <script type="module">
-    import AppButton from "./js/components/AppButton.js";
+    import App from "./js/components/App.js";
 
-    let app = {
-        components : {
-            'app-button' : AppButton
-        }
-    };
-
-    Vue.createApp(app).mount('#app');
+    Vue.createApp(App).mount('#app');
 </script>
 </body>
 </html>

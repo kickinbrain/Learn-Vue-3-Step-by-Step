@@ -8,40 +8,59 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@v3.1.1"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-
-
-
-    <style>
-
-        .text-red{
-            color:red;
-        }
-        .text-green{
-            color:green;
-        }
-
-    </style>
 </head>
 <body>
 <div id="app">
-    <button :class="active ? 'text-green' : 'text-red'" @click="toogle">Click me</button>
+    <section v-show="inProgressAssignments.length" class="container mx-auto my-10">
+        <h2 class="font-bold text-xl mb-2">In progress</h2>
+        <ul class="list-disc ml-4">
+            <li v-for="assignment in inProgressAssignments"
+                :key="assignment.id"
+            >
+                <label class="cursor-pointer">
+                    {{ assignment.name }}
+                    <input type="checkbox" v-model="assignment.completed">
+                </label>
+            </li>
+        </ul>
+    </section>
+    <section v-if="completedAssignments.length" class="container mx-auto my-10">
+        <h2 class="font-bold text-xl mb-2">Completed</h2>
+        <ul class="list-disc ml-4">
+            <li v-for="assignment in completedAssignments"
+                :key="assignment.id"
+            >
+                <label class="cursor-pointer">
+                    {{ assignment.name }}
+                    <input type="checkbox" v-model="assignment.completed">
+                </label>
+            </li>
+        </ul>
+    </section>
 </div>
-
-
-
 <script>
-    Vue.createApp({
-        data(){
+    let app = {
+        data (){
             return {
-                active : false
+                assignments : [
+                    { name: 'Finish project', completed: false, id:1 },
+                    { name: 'Read chapter 4', completed: false, id:2 },
+                    { name: 'Turn in homework', completed: false, id:3}
+                ]
             }
         },
-        methods:{
-            toogle(){
-                this.active = ! this.active;
+        computed: {
+            inProgressAssignments() {
+                return this.assignments.filter(assignment => !assignment.completed);
+            },
+            completedAssignments() {
+                return this.assignments.filter(assignment => assignment.completed);
             }
         }
-    }).mount('#app');
+
+    };
+
+    Vue.createApp(app).mount('#app');
 </script>
 </body>
 </html>

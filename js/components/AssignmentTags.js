@@ -3,7 +3,7 @@ export default {
         <div class="flex gap-2 mb-3">
             <button 
             v-for="tag in tags"
-            @click="$emit('change', tag)"
+            @click="$emit('update:currentTag', tag)"
             class="border rounded-sm py-1 px-2"
             :class="{
                 'border-blue-500 text-blue-500' : tag === currentTag
@@ -19,7 +19,7 @@ export default {
       currentTag: String
     },
 
-    
+
 
     computed:{
         tags(){

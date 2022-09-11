@@ -16,7 +16,7 @@ export default {
         </div>
         <assignment-tags 
         v-model:currentTag="currentTag"
-        :initial-tags="assignments.map(a => a.tag)"
+        :initial-tags="assignments.map(a  => a.tag)"
         />
         <ul>
            <assignment  

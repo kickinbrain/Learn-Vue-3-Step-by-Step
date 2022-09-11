@@ -7,12 +7,12 @@
   },
   { "name": "Second Finish project",
     "completed": false,
-    "id":1,
+    "id":2,
     "tag": "math"
   },
   { "name": "***Last Finish project",
-    "completed": false,
-    "id":1,
+    "completed": true,
+    "id":3,
     "tag": "since"
   }
   ]

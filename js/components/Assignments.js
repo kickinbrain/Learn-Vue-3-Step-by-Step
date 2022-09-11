@@ -4,16 +4,24 @@ import AssignmentCreate from "./AssignmentCreate.js";
 export default {
     components: { AssignmentsList, AssignmentCreate },
     template: `
-        <div style="width:300px">
-            <assignments-list :assignments="filters.inProgress" title="In Progress"></assignments-list>
-            <assignments-list :assignments="filters.completed" title="Completed Assignments"></assignments-list>
-            <assignment-create @add="add"></assignment-create>
+        <div class="flex"> 
+            <assignments-list :assignments="filters.inProgress" title="In Progress">
+                 <assignment-create @add="add"></assignment-create>
+            </assignments-list>
+            <assignments-list 
+            v-if="showCompleted"
+            :assignments="filters.completed" 
+            title="Completed Assignments" 
+            can-toggle
+            @toggle="showCompleted = !showCompleted"
+            ></assignments-list>
             
         </div>
     `,
     data (){
         return {
-            assignments : []
+            assignments : [],
+            showCompleted: true
         }
     },
 

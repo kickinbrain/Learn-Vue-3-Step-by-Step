@@ -8,25 +8,23 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .is-loading{
+           border: 1px solid black;
+        }
+    </style>
 
 </head>
 <body class="h-full grid place-items-center">
 
 <div id="app">
-    <app-buttons>Submit</app-buttons>
-    <app-buttons>Another button</app-buttons>
+    <app-buttons type="secondary" :processing="false">Submit</app-buttons>
 </div>
 
 <script type="module">
-    import AppButton from "./js/components/AppButton.js";
-    let app = {
-        components: {
-            'app-buttons': AppButton
-        }
+    import App from "./js/components/App.js";
 
-    };
-
-    Vue.createApp(app).mount('#app');
+    Vue.createApp(App).mount('#app');
 </script>
 
 </body>

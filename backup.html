@@ -17,24 +17,11 @@
     <app-buttons>Another button</app-buttons>
 </div>
 
-<script>
+<script type="module">
+    import AppButton from "./js/components/AppButton.js";
     let app = {
         components: {
-            'app-buttons':{
-                template:
-                `
-                    <button class="bg-gray-200 hover:bg-gray-400 border rounded px-4 py-2 m-2 disabled:cursor-not-allowed" :disabled="processing">
-                        <slot />
-                    </button>
-                `,
-                mounted(){
-                },
-                data (){
-                    return {
-                        processing: true
-                    };
-                }
-            },
+            'app-buttons': AppButton
         }
 
     };

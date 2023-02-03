@@ -1,15 +1,23 @@
-<script>
-  import flash from "../mixins/flash";
+<script setup>
+  import { ref, watch } from "vue";
+  import { useStorage } from "../composables/useStorage";
 
-  export default {
-    mixins: [flash]
-  };
+
+
+  let food = useStorage('food', 'salad')
+  let age = useStorage('age')
+
+
+
 </script>
 
 <template>
   <main>
+    <p style="margin-bottom: 20px">
+      What is your favorite food? <input type="text" class="mb-2" v-model="food">
+    </p>
     <p>
-      <button @click="flash('It Works')">Click Me</button>
+      How old are you <input type="text" v-model="age">
     </p>
   </main>
 </template>

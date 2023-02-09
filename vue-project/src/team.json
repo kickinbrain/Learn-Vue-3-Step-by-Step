@@ -1,0 +1,19 @@
+{
+  "members": [
+    {
+      "name": "John Doe",
+      "email": "john@doe.com",
+      "status": "Active"
+    },
+    {
+      "name": "John Second",
+      "email": "john@second.com",
+      "status": "Active"
+    },
+    {
+      "name": "Thony Deee",
+      "email": "thone@dee.com",
+      "status": "Active"
+    }
+  ]
+}

@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve" : "npx serve & npx json-server db.json -p 3001"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/kickinbrain/Learn-Vue-3-Step-by-Step/issues"
   },
-  "homepage": "https://github.com/kickinbrain/Learn-Vue-3-Step-by-Step#readme",
-  "devDependencies": {
-    "json-server": "^0.17.1"
-  }
+  "homepage": "https://github.com/kickinbrain/Learn-Vue-3-Step-by-Step#readme"
 }

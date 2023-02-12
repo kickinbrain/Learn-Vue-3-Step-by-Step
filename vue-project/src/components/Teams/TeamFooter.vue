@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-defineProps({
-  team: Object
-});
+import {useTeamStore} from "../../stores/TeamStore.js";
+let team = useTeamStore();
 </script>

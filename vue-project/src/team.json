@@ -1,4 +1,6 @@
 {
+  "name": "Smiley",
+  "spots": 5,
   "members": [
     {
       "name": "John Doe",
@@ -8,6 +10,16 @@
     {
       "name": "John Second",
       "email": "john@second.com",
+      "status": "Active"
+    },
+    {
+      "name": "Thony Deee",
+      "email": "thone@dee.com",
+      "status": "Active"
+    },
+    {
+      "name": "Thony Deee",
+      "email": "thone@dee.com",
       "status": "Active"
     },
     {
